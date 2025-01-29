@@ -1,0 +1,237 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth; /*Determina o comportamento da rolagem com base no nossos links para navegar na mesma página, em vez de ser instântaneo, será suave.*/
+  }
+  
+  * {
+    box-sizing: border-box; /*A forma em que o tamanho do elemento é calculado*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+      sans-serif;
+  }
+  
+  :root {
+    --color-main: #f7a60e;
+    --color-background: #ffffff;
+    --color-black: #242424;
+    --color-white: #eaeaea;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-black);
+  }
+  
+  .header {
+    text-align: center;
+    background-color: var(--color-black);
+    padding: 2.5rem;
+  }
+  
+  .header__nav-item,
+  .header__nav-item > a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-right: 1rem;
+    color: var(--color-white);
+  }
+  
+  .header__nav-item > a::after {
+    position: absolute;
+    content: '';
+    left: 0; /* Começa exatamente na esquerda do link  -  se fosse 50%, começaria no meio*/
+    bottom: -3px; /* Linha fica 3px abaixo do texto - quanto mais negativo, mais afastada */
+    width: 0; /* Começa invisível */
+    height: 0.2rem; /* Espessura da linha */
+    border-radius: 1rem;
+    background-color: var(--color-main);
+    transition: width 0.5s ease;
+  }
+  
+  .header__nav-item > a:hover::after {
+    width: 100%; /*vai ocupar 100% da largura do elemento pai - conteúdo*/
+  }
+  
+  .hero {
+    position: relative;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  .hero__background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    z-index: -1;
+  }
+  
+  .hero__foreground {
+    text-align: center;
+    font-weight: 200;
+    padding: 25vh;
+    color: #fff;
+  }
+  
+  .hero__title {
+    font-size: 9rem;
+    font-weight: 200;
+  }
+  
+  .hero__text {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.75rem;
+  }
+  
+  .hero__cta-button,
+  .contact__cta-button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: inline-block;
+    margin: 3rem auto;
+    padding: 2rem 4rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    color: #242424;
+    background-color: var(--color-main);
+    transition: background-color 0.4s linear;
+  }
+  
+  .hero__cta-button:hover,
+  .contact__cta-button:hover {
+    background-color: var(--color-black);
+    color: var(--color-main);
+  }
+  
+  .section {
+    text-align: center;
+    margin: 10rem auto;
+    padding: 0 10rem;
+  }
+  
+  .section__title {
+    margin-bottom: 5rem;
+    font-size: 4.2rem;
+  }
+  
+  .section__menu-wrapper {
+    text-align: justify;
+    display: inline-block;
+    height: 40rem;
+    max-width: 40rem;
+    margin: 2rem;
+    border: 4px solid transparent;
+    border-radius: 3rem;
+    /* eixo x - eixo y - blur - recuo - cor */
+    box-shadow: 0 4px 4px 1.5px rgba(0, 0, 0, 0.19);
+    background-color: var(--color-white);
+  }
+  
+  .section__menu-wrapper:hover {
+    border: 4px solid var(--color-main);
+    cursor: pointer;
+  }
+  
+  .section__menu-img {
+    width: 100%;
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+  }
+  
+  .section__title-h3,
+  .section__text {
+    font-size: 1.8rem;
+    margin-left: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section__text {
+    font-size: 1.6rem;
+  }
+  
+  .about {
+    position: relative;
+    padding: 10rem 0;
+    background: linear-gradient(#24242444, var(--color-black));
+  }
+  
+  .about__background {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    z-index: -1;
+  }
+  
+  .about__wrapper {
+    text-align: center;
+  }
+  
+  .about__title,
+  .about__text {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 4.2rem;
+  }
+  
+  .about__text {
+    font-size: 1.6rem;
+  }
+  
+  .contact {
+    text-align: center;
+    margin: 5rem auto;
+  }
+  
+  .contact__title,
+  .contact__text {
+    margin-bottom: 1.5rem;
+    font-size: 4.2rem;
+  }
+  
+  .contact__text {
+    font-size: 1.6rem;
+  }
+  
+  .contact__address {
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
+  }
+  
+  .contact__address > p,
+  .contact__address-wrapper {
+    display: inline-block;
+    text-align: justify;
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .contact__address-wrapper a {
+    color: var(--color-main);
+  }
+  
+  .footer {
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 2.5rem;
+    background-color: var(--color-black);
+    color: var(--color-main);
+  }
+  
+  .footer a {
+    color: inherit;
+  }
+  
+  
+  
